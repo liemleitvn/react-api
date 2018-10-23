@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
 
-import allReducers from './reducers/index'
 import App from './components/App'
-
-const store = createStore(allReducers);
+import {store} from './store/store'
 
 ReactDom.render(
     <Provider store={store}>

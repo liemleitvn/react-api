@@ -1,47 +1,62 @@
-import {ENPOINT, VERSION} from "./api-env";
+import {ENPOINT} from "./api-env";
 import $ from 'jquery';
 import 'babel-polyfill';
 
 
 export default class Request {
 
-    makeUrl (path, prams = "") {
+    /**
+     * make query string from params object parameter
+     * func encodeURIComponent: encode special characters eg: space - , - / - ? - : - @ .....
+     * @param params
+     * @param includeQuestionCharacter
+     * @returns {string}
+     */
+    static mapQuery (params = {}, includeQuestionCharacter = false) {
+        let esc = encodeURIComponent;
+
+        return (includeQuestionCharacter?'?':'') + Object.keys(params)
+            .map(k=>esc(k)+esc(params[k]))
+            .join('&');
+    }
+
+    /**
+     * func send request to api url
+     * method request: POST
+     * @param path = path&query_string
+     * @param opts = {headers{}&body{}&...}
+     * @returns {Promise<any>}
+     */
+    static async send (path, opts = {}) {
+
+
+        let headers = Object.assign(opts.headers || {}, {
+            'Content-Type': 'application/json'
+        });
+
         let urlApi = ENPOINT;
-        if(VERSION !== "") {
-            urlApi = `${urlApi}/${VERSION}`;
+
+        let response = await fetch(
+            `${urlApi}/${path}`,
+            Object.assign({method: 'POST'}, opts, {headers})
+        );
+
+        const data = await response.json();
+
+        if(data.error) {
+            throw new Error(data.error);
         }
 
-        urlApi = `${urlApi}/${path}`;
-
-        if(Object.keys(prams).length !== 0) {
-            let query_string = $.param(params)
-
-            urlApi = `${urlApi}?${query_string}`;
-        }
-
-        return urlApi;
-
+        return data;
     }
 
-    getHeaders() {
-
-    }
-
-    async getTokenLogin (path, data, params = "") {
-        console.log(path, data)
-        let urlApi = this.makeUrl(path, params);
-
-        let headers = {'Content-type': 'application/json'};
-
-        try {
-            let response = await fetch(urlApi, {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify(data)
-            });
-            return await response.json();
-        } catch (e) {
-            console.error(e);
-        }
+    /**
+     * method request: GET
+     * @param path
+     * @param opts
+     * @returns {Promise<any>}
+     */
+    static get(path, opts = {}) {
+        return this.send(path, {...opts, method: 'GET'});
     }
 }

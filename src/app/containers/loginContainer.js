@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 
-import {login} from '../actions/login'
+import {fetchLogin} from '../actions/loginAction'
 
 
-class Login extends React.Component{
+class LoginContainer extends React.Component{
 
     constructor() {
         super();
@@ -25,7 +25,7 @@ class Login extends React.Component{
     }
 
     onLogin(email, password) {
-        this.props.login({'email': email, 'password': password})
+        this.props.login({'email': email, 'password': password});
     }
 
     render() {
@@ -70,7 +70,7 @@ let mapStateToProps = state =>{
 
 //chuyen du lieu tu action thanh props
 const mapDispatchToProps = dispatch=> {
-    return bindActionCreators({login: login}, dispatch)
+    return bindActionCreators({login: fetchLogin}, dispatch)
 };
 
-export const Login_Container = connect(mapStateToProps,mapDispatchToProps)(Login);
+export const Login_Container = connect(mapStateToProps,mapDispatchToProps)(LoginContainer);
