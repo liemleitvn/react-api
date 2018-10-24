@@ -51,8 +51,6 @@ class PostItem extends React.Component{
 
     showPost() {
 
-        console.log(this.props);
-
         let posts = this.props.posts;
 
         let strSearch = this.props.dataSearch;
