@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Search from './Control/Search'
+import Search from '../containers/SearchContainer'
 import Sort from './Control/Sort'
 import Add from './Control/Add'
 

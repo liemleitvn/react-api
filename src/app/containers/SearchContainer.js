@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
 
-import {searchPosts} from '../../actions/searchAction'
+import {searchPosts} from '../actions/searchAction'
 
 
-class Search extends React.Component{
+class SearchContainer extends React.Component{
 
     constructor () {
         super();
@@ -63,4 +63,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({search: searchPosts}, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer)
