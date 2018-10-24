@@ -1,0 +1,214 @@
+-------------------OPP---------------
+1. OOP là gì ?
+2. OOP có gì tốt hơn so với lập trình nguyên thuỷ ?
+3. Nêu các tính chất của OOP.
+4. Phân biệt private, protected và public trong PHP (hoặc các ngôn ngữ lập trình khác)
+5. Hàm _construct được gọi khi nào ? hàm _destruct được gọi khi nào ?
+6. Interface là gì ?
+6. Abstract là gì ?
+7. Phân biệt sự khác nhau giữa interface và abstract.
+8. Static function/biến là gì ?
+9. Vì sao phải dùng static ?
+10. Cách gọi 1 function hoặc biến static ?
+11. Nếu tất cả function và biến đều dùng static thì có được không ? Vì sao ?
+12. PHP version hiện tại là mấy ? Khác gì so với PHP version trước đó ?
+13. Session, cookie là gì, phân biệt sự khác nhau giữa session và cookie.
+14. Cách khai báo, set và delete cookie, session.
+15. Khi đóng tab thì session, cookie có bị mất không ? Vì sao ?
+16. Session lưu ở server, vậy khi đăng nhập (ví dụ như đăng nhập facebook) thì thao tác đó làm ở client(browser),
+    vậy làm sao server nó phân biệt là bạn đang đăng nhập so với người khác.
+    Cách dễ hiểu hơn là làm sao browser của bạn liên lạc với session trên server.
+17. Hàm echo, var_dump và print_r khác nhau như thế nào ?
+18. Hàm include, include_once, require, require_once khác nhau như thế nào ?
+19. Phân biệt các biến môi trường $_GET, $_POST và $_REQUEST khác nhau như thế nào. $_SERVER dùng để làm gì ?
+20. PHP có hỗ trợ đa thừa kế không ?
+21. Trait trong PHP là gì
+22. Trait chạy trên phiên bản PHP version mấy, vì sao cần sử dụng Trait
+23. Constant trong PHP là gì ?
+24. Hàm define trong PHP dùng để làm gì ?
+25. Hàm defined trong PHP dùng để làm gì ?
+26. Hàm Isset trong PHP dùng để làm gì ?
+27. Hàm empty trong PHP dùng để làm gì ?
+28. Sự khác nhau giữa isset và empty
+29. Có 1 biến $a = false, hãy cho biết kết quả trả về khi chạy dòng lệnh var_dump(isset($a)) và var_dump(empty($a)).
+30. Giải thích lý do.-
+31. Hàm unset dùng để làm gì ?
+32. Hàm unlink dùng để làm gì ?
+33. Mảng trong PHP có mấy loại ?
+34. Mảng tuần tự là gì ?
+35. Mảng bất tuần tự là gì ?
+36. Dùng những toán tử lặp nào để duyệt mảng (ví dụ ngoài toán tử for() ra thì còn lệnh nào nữa).
+37. Cách đếm có bao nhiêu phần tử trong mảng.
+38. Hàm in_array, is_array, array_merge, array_combine, array_values, array_keys, sort, rsort, asort, ksort, arsort, krsort dùng để làm gì ?
+39. Trong PHP (hoặc các ngôn ngữ lập trình khác) toán tử 3 dấu = "===" khác toán tử 2 dấu = "==" như thế nào ?
+40. Chuyển mảng thành chuỗi trong PHP dùng hàm gì ?
+41. Và ngược lại dùng hàm gì ?- json_encode, json_decode, serialize dùng để làm gì ?
+42. Phân biệt khác nhau giữa 3 hàm này trong PHP
+43. Magic method trong PHP gồm những hàm nào ?
+44. Namespace là gì ?
+45. Vì sao phải sử dụng namespace ?
+46. Namespace chạy trên phiên bản PHP bao nhiêu ?
+47. Autoload trong PHP là gì ?
+48. Composer trong PHP là gì ?
+49. Hoạt động như thế nào ?
+50. Các package khi install trong composer nó download từ đâu ?
+51. File composer.json dùng để làm gì ?
+52. Khi install composer thì package nó download về ở đâu trên thư mục project ?
+53. Autoload trong composer nằm ở file nào ?
+54. Design Patterns là gì ?
+55. Bạn biết những design patterns nào ?
+
+------------MySQL---------------------
+1. Mysql version bạn đang dùng là version mấy ?
+2. Mysql có những engine storage nào ?
+3. Phân biệt left join, right join, inner join. Cho ví dụ cụ thể.
+4. Union join là gì ?
+5. "View" trong mysql là gì ?
+6. Trigger trong mysql là gì ?
+7. Vì sao phải dùng trigger.
+8. Khoá chính trong mysql là gì ?
+9. Nêu tác dụng của khoá chính (primary key)
+10. Khoá ngoại (foreign key) dùng để làm gì ?
+11. Không dùng khoá ngoại có được không ? Vì sao ?
+12. Index trong mysql là gì ? Có tác dụng như thế nào ?
+13. Full text search trong mysql là gì ?
+14. Trong table có 10 record, muốn select từ record thứ 5 đến hết thì viết câu sql query thê nào ?
+15. Hàm concat and group_concat in mysql dùng để làm gì ?
+16. Group by trong mysql là gì ?
+17. Order by trong mysql là gì ?
+18. NoSQL là gì ?
+
+------------Các câu hỏi security-----------------
+1. Bạn biết những cách tấn công nào của hacker ?
+2. SQL Injection là gì ?
+3. XSS là gì
+4. CSRF là gì
+4. DDOS là gì ?
+5. Vì sao nên hạn chế phân chuyền chmod 777 cho thư mục hoặc file ?
+
+
+-----------Các câu hỏi performance--------
+1. Khi website bạn quá chậm, bạn debug để tìm ra nguyên nhân như thế nào ?
+2. Làm thế nào để fix lỗi câu sql chạy quá lâu vì join quá nhiều lần ?
+3. Memcached là gì ?
+4. Memcached lưu data ở đâu trên server, máy tính ? Cách dùng nó trong PHP.
+5. Redis là gì ? Cách dùng nó trong PHP. Redis lưu data ở đâu.
+
+--------------Các câu hỏi về framework-----------
+1. Mô hình MVC là gì ?
+2. Nó có khác gì so với lập trình web cổ điển.
+3. Bạn đã làm với những framework nào rồi ?
+4. Laravel bạn đang làm hiện tại là version mấy ?
+5. Version mới nhất của Laravel hiện tại là version mấy ?
+6. File .env dùng để làm gì ?
+7. file .env.example dùng để làm gì ?
+8. Service container trong Laravel là gì ?
+9. Cách cấu hình database trong laravel
+9. Job/Queue trong Laravel dùng để làm gì ?
+10. Supervisor linux là gì ? Cách áp dụng trong laravel.
+11. Middleware trong Laravel là gì ? Dùng để làm gì ?
+13. Migration trong Laravel là gì ?
+14. Vì sao phải dùng migration ?
+15. Cách tạo 1 migration trong laravel.
+17. Console command trong laravel dùng để làm gì ?
+18. Cách tạo 1 custom command bằng lệnh artisan trong laravel.
+19. Cronjob là gì ?
+20. Cách set cronjob trong laravel, trên server linux.
+21. Controller trong laravel dùng để làm gì ?
+22. Folder storage trong laravel có những thư mục con nào ? Nêu rõ chức năng từng thư mục.
+23. Thư mục bootstrap trong laravel dùng để làm gì ?
+24. Thư mục config trong laravel dùng để làm gì ?
+24. Cách gọi 1 config trong laravel.
+25. Eloquents và Query Builder khác nhau như thế nào ?
+26. Repository là gì ?
+27. Vì sao sử dụng repository ?
+28. Service là gì ?
+29. Vì sao phải dùng Service ?
+30. Template engine là gì ?
+31. Trong file view .blade.php, khi in ra 1 biến dùng {{ }}, vậy {!! !!} dùng để làm gì ?
+32. Vì sao laravel php file lại dùng {{}} mà nó vẫn in ra được kết quả, vì bình thuường phải dùng  mới chạy được.
+33. File view trong laravel được biên dịch xong chứa ở đâu ?
+34. @yield và @section dùng để làm gì
+
+------------Các câu hỏi server---------
+1. Bạn đã dùng qua hệ điều hệ hành linux nào rồi ?
+2. Thông thuường trên server hay dùng hệ điều hành centos, ít khi dùng ubuntu vì sao ?
+3. Lệnh apt-get và yum dùng để làm gì ?
+4. Lệnh wget, curl, vim, chmod, chown, useradd, passwd, nano,... dùng như thế nào ?
+5. chmod 0775 và chmod 2755 có ý nghĩa như thế nào ?
+6. Giải thích command sau: chown -R www-data:www-data /var/www
+7. Cách xoá 1 folder và các folder con của nó trên linux = command line.
+8. Cách copy, move 1 folder và các folder con của nó trên linux = command line.
+9. AWS là gì ?
+10. EC2 là gì ?
+11. S3 là gì ?
+12. AWS SQS là gì ?
+13. AWS Lambda là gì ?
+14. VPS là gì ?
+15. VPC là gì ?
+16. SSH là gì
+17. SSL là gì ?
+18. DNS là gì ?
+19. Cách ssh tới 1 server linux ?
+20. Cách ssh tới EC2 ?
+
+
+-----------------Các câu hỏi frontend------------
+1. CSS căn bản: display: inline | inline-block | block | flex khác nhau như thế nào ?
+2. Thuộc tính position có mấy giá trị ?- px, em, rem khác nhau như thế nào ?
+3. Đơn vị vw và vh trong css là gì ?
+4. Padding có giá trị âm hay không ?
+5. Responsive là gì ?
+6. Cách làm responsive trong css-
+7. SASS là gì ?
+8. Vì sao dùng SASS,
+9. LESS là gì ?
+10. Vì sao dùng LESS
+
+----------------------Javascript căn bản-----------------
+1. Prototype là gì ?
+2. Phân biệt khác nhau giữa array và object trong js
+3. Chuyển chuỗi thành mảng, mảng thành chuỗi trong js dùng lệnh gì ?
+4. jQuery là gì ?
+5. Phiên bản bạn đang dùng là phiên bản nào ?
+6. Phiên bản mới nhất là phiên bản mấy ?
+7. ES6 là gì ?
+8. Khác gì so với ES5
+9. Các hàm call, bind, apply trong javascript dùng để làm gì ?
+10. Arrow function trong es6 là gì ?
+11. Lợi ích so với dùng function bình thuường ở ES5
+12. Promise là gì ?
+13. Destructuring, spread operator trong es6 là gì ?
+14. ... tất cả các tính năng của ES6
+15. npm là gì ?
+16. node_modules là gì ?
+17. package.json dùng để làm gì ?
+18. save-dev và --save khi install package của nodejs khác nhau thế nào ?
+19. babel dùng để làm gì ?
+20. ReactJS là gì ?
+21. Middleware trong reactjs dùng để làm gì ?
+22. Nêu các middlware thông dụng trong reactjs.
+23. Bạn đang dùng loại nào ?
+24. Hãy nêu vòng đời của component trong reactjs (component lifecycle)
+25. Virtual DOM là gì ?
+26. Có tác dụng gì trong reactjs ?
+27. Phân biệt props và state.
+28. Props là không thay đổi giá trị được, vậy có cách nào thay đổi được không ?
+
+-------------------Các câu hỏi khác----------------
+1. Bạn đã làm những dự án PHP nào rồi ?
+2. GIT là gì ?
+3. Dùng để làm gì ?
+4. git branch là gì ?
+5. Vì sao cần dùng branch, cách xử lý khi bị conflict trong git.
+6. Bạn đang làm theo git flow như thế nào ?
+7. Kế hoạch sắp tới của bạn như thế nào ?
+8. Thời gian rảnh bạn thuường làm gì ?
+9. Nếu trong công ty bạn bị 1 đồng nghiệp chửi vì lý do code lỗi nhiều quá thì bạn xử lý như thế nào ?
+10. Task là gì ?
+11. Bug là gì ?
+12. Estimation task là gì ?
+13. Làm cách nào để estimate chính xác nhất.
+14. Mô hình Scrum là gì ?
+15. Waterfall là gì ? Nêu ưu điểm, nhược điểm
+16. Bạn biết công cụ trello và JIRA không ?

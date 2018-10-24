@@ -7,10 +7,10 @@ import connect from "react-redux/es/connect/connect";
 class PostItem extends React.Component{
 
     constructor() {
-        super()
+        super();
     }
 
-    getPosts() {
+    componentWillMount() {
         let token = localStorage.getItem('token');
         if(Object.keys(this.props.posts).length ===0) {
             this.props.fetchPost(token);
@@ -50,22 +50,21 @@ class PostItem extends React.Component{
     }
 
     showPost() {
-        //get posts from api
-        this.getPosts();
+
+        console.log(this.props);
 
         let posts = this.props.posts;
 
         let strSearch = this.props.dataSearch;
 
-        console.log(strSearch, posts);
-
         if(Object.keys(strSearch).length !== 0) {
             if(Object.keys(posts).length !==0) {
+
                 strSearch = strSearch.toLowerCase().trim();
+
                 posts = this.props.posts.filter((post, index)=> {
                     let title = post.title.toLowerCase().trim();
                     let content = post.content.toLowerCase().trim();
-
 
                     if(title.includes(strSearch) || content.includes(strSearch)) {
                         console.log(title, content);

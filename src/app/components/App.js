@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import {Login_Container} from '../containers/loginContainer'
 import PostsContainer from '../containers/postsContainer'
