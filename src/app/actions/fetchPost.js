@@ -10,10 +10,10 @@ export const fetchPostSuccess = (data) => {
     }
 };
 
-export const fetchPost = (token, id = '') => {
+export const fetchPost = (token, id = '', strSearch = "") => {
     return async dispatch => {
         try {
-            let result = await PostApi.get(token, id);
+            let result = await PostApi.get(token, id, strSearch);
 
             dispatch(fetchPostSuccess(result))
         } catch (e) {

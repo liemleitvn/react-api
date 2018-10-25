@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux'
 
 
 import {searchPosts} from '../actions/searchAction'
+import {fetchPost} from "../actions/fetchPost";
 
 
 class SearchContainer extends React.Component{
@@ -25,14 +26,15 @@ class SearchContainer extends React.Component{
         this.setState({
             strSearch: ""
         });
+        this.handleSearch("");
     }
 
     handleSearch(strSearch) {
-        this.props.search(strSearch);
+        const token = localStorage.getItem('token');
+        this.props.fetchPost(token, "", strSearch);
     }
 
     render () {
-        console.log(this.props);
         return (
             <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <div className="input-group">
@@ -44,7 +46,7 @@ class SearchContainer extends React.Component{
                         placeholder="Seach for..."
                     />
                     <span className="input-group-btn">
-                        <button onClick={()=>this.handleSearch(this.state.strSearch)} className="btn btn-info" type="button">Go</button>
+                        <button onClick={()=>this.handleSearch(this.state.strSearch)} className="btn btn-info" type="button">Search</button>
                         <button onClick={this.handleClear.bind(this)} className="btn btn-warning" type="button">Clear</button>
                     </span>
                 </div>
@@ -61,7 +63,7 @@ let mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({search: searchPosts}, dispatch)
+    return bindActionCreators({fetchPost: fetchPost}, dispatch)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer)

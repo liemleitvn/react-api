@@ -1,21 +1,30 @@
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {fetchPost} from "../actions/fetchPost";
+import {deletePost} from '../actions/deletePost'
 import connect from "react-redux/es/connect/connect";
 
 
-class PostItem extends React.Component{
+class PostItemContainer extends React.Component{
 
     constructor() {
         super();
+        this.state = {
+
+        };
     }
 
-    componentWillMount() {
+    fetchPostApi() {
+
         let token = localStorage.getItem('token');
         if(Object.keys(this.props.posts).length ===0) {
             this.props.fetchPost(token);
         }
+    }
 
+    handleClickItem(post) {
+        let token = localStorage.getItem('token');
+        let $result = this.props.deletePost(post.id, token);
     }
 
     createListPosts (posts) {
@@ -32,7 +41,7 @@ class PostItem extends React.Component{
         if(Object.keys(posts).length !==0) {
             item = posts.map((post, index) => {
                 return (
-                    <tr key={index}>
+                    <tr key={index} >
                         <td className="text-center">{index + 1}</td>
                         <td>{post.title}</td>
                         <td>{post.content}</td>
@@ -40,7 +49,7 @@ class PostItem extends React.Component{
                         <td className="text-center">{post.user}</td>
                         <td>
                             <button type="button" className="btn btn-warning">Edit</button>
-                            <button type="button" className="btn btn-danger">Delete</button>
+                            <button onClick={()=>this.handleClickItem(post)} type="button" className="btn btn-danger">Delete</button>
                         </td>
                     </tr>
                 );
@@ -50,6 +59,7 @@ class PostItem extends React.Component{
     }
 
     showPost() {
+
 
         let posts = this.props.posts;
 
@@ -76,6 +86,10 @@ class PostItem extends React.Component{
 
 
     render () {
+
+        this.fetchPostApi();
+
+        console.log(this.props);
 
         return (
             <div className="panel panel-success">
@@ -105,12 +119,13 @@ const mapStateToProps = state => {
     return {
         posts: state.posts,
         login: state.dataLogin,
-        dataSearch: state.dataSearch
+        dataSearch: state.dataSearch,
+        dadaDelete: state.dadaDelete
     }
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({fetchPost: fetchPost}, dispatch);
+    return bindActionCreators({fetchPost: fetchPost,deletePost: deletePost }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostItem);
+export default connect(mapStateToProps, mapDispatchToProps)(PostItemContainer);

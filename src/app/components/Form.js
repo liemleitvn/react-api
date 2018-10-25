@@ -9,7 +9,7 @@ export default class Form extends React.Component{
                     <form action = "" method="post" className="form-inline">
                         <div className="form-group">
                             <label className="sr-only" htmlFor="add">label</label>
-                            <input style={{width: 190}} id="add" type="text" className="form-control" placeholder="Task Name" />
+                            <input style={{width: 190}} id="add" type="text" className="form-control" placeholder="Title" />
                         </div>
                         <div className="form-group">
                             <label className="sr-only" htmlFor="inputDs">label</label>
@@ -18,6 +18,10 @@ export default class Form extends React.Component{
                                 <option value="{1}">Medium</option>
                                 <option value="{2}">High</option>
                             </select>
+                        </div>
+                        <div className="form-group">
+                            <label className="sr-only" htmlFor="add">label</label>
+                            <input style={{width: 300}} id="add" type="text" className="form-control" placeholder="Content" />
                         </div>
                         <button type="button" className="btn btn-primary">Submit</button>
                         <button type="button" className="btn btn-primary">Cancel</button>

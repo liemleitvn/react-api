@@ -16,7 +16,7 @@ export default class Request {
         let esc = encodeURIComponent;
 
         return (includeQuestionCharacter?'?':'') + Object.keys(params)
-            .map(k=>esc(k)+esc(params[k]))
+            .map(k=>esc(k)+ "=" + esc(params[k]))
             .join('&');
     }
 
@@ -41,10 +41,15 @@ export default class Request {
             Object.assign({method: 'POST'}, opts, {headers})
         );
 
+        if(response.status === 204) {
+            return {'message': 'successful.'};
+        }
+
         const data = await response.json();
 
         if(data.error) {
-            throw new Error(data.error);
+            console.log(data.error);
+            return {};
         }
 
         return data;
@@ -58,5 +63,11 @@ export default class Request {
      */
     static get(path, opts = {}) {
         return this.send(path, {...opts, method: 'GET'});
+    }
+
+
+    static delete(path, opts = {}) {
+
+        return this.send(path, {...opts, method: 'DELETE'});
     }
 }
