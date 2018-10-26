@@ -23,21 +23,18 @@ export default class Request {
     /**
      * func send request to api url
      * method request: POST
-     * @param path = path&query_string
+     * @param urlApi = url&path&query_string
      * @param opts = {headers{}&body{}&...}
      * @returns {Promise<any>}
      */
-    static async send (path, opts = {}) {
-
+    static async send (urlApi, opts = {}) {
 
         let headers = Object.assign(opts.headers || {}, {
             'Content-Type': 'application/json'
         });
 
-        let urlApi = ENPOINT;
-
         let response = await fetch(
-            `${urlApi}/${path}`,
+            urlApi,
             Object.assign({method: 'POST'}, opts, {headers})
         );
 
@@ -57,17 +54,17 @@ export default class Request {
 
     /**
      * method request: GET
-     * @param path
+     * @param url
      * @param opts
      * @returns {Promise<any>}
      */
-    static get(path, opts = {}) {
-        return this.send(path, {...opts, method: 'GET'});
+    static get(url, opts = {}) {
+        return this.send(url, {...opts, method: 'GET'});
     }
 
 
-    static delete(path, opts = {}) {
+    static delete(url, opts = {}) {
 
-        return this.send(path, {...opts, method: 'DELETE'});
+        return this.send(url, {...opts, method: 'DELETE'});
     }
 }

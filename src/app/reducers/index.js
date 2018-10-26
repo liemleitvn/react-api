@@ -5,7 +5,9 @@ import {routerReducer } from 'react-router-redux';
 import dataLogin from './login-reducer';
 import posts from './posts-reducer';
 import dataSearch from './search-reducer';
-import dadaDelete from './delete-reducer';
+import dataDelete from './delete-reducer';
+import categories from './categories-reducer'
+import resultCreatePost from './posts-create-reducer';
 
 
 
@@ -14,7 +16,9 @@ const allReducers = combineReducers({
     dataLogin: dataLogin,
     posts: posts,
     dataSearch: dataSearch,
-    dadaDelete: dadaDelete,
+    dataDelete: dataDelete,
+    categories: categories,
+    resultCreatePost: resultCreatePost,
     routing: routerReducer
 });
 

@@ -7,6 +7,7 @@ import Add from './Control/Add'
 
 export default class Control extends React.Component{
     render () {
+
         return (
             <div className="row">
 
@@ -19,7 +20,7 @@ export default class Control extends React.Component{
                 {/*End Sort*/}
 
                 {/*Add start*/}
-                <Add/>
+                <Add toggleForm = {this.props.toggleForm} btnAdd = {this.props.btnAdd}/>
                 {/*End add*/}
             </div>
         );

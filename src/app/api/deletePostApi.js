@@ -1,11 +1,14 @@
 import Request from './Request'
+import {ENPOINT} from "./api-env";
 
 
 export default class DeletePostApi {
 
     static deletePost (token, id) {
 
-        let path = `posts/${id}`;
+        let urlApi = ENPOINT;
+
+        urlApi += `/posts/${id}`;
 
         let opts = {
             headers: {
@@ -13,7 +16,7 @@ export default class DeletePostApi {
             }
         };
 
-        return Request.delete(path, opts);
+        return Request.delete(urlApi, opts);
     }
 
 }

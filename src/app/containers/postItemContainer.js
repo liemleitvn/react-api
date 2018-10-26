@@ -14,7 +14,7 @@ class PostItemContainer extends React.Component{
         };
     }
 
-    fetchPostApi() {
+    componentWillMount() {
 
         let token = localStorage.getItem('token');
         if(Object.keys(this.props.posts).length ===0) {
@@ -60,7 +60,6 @@ class PostItemContainer extends React.Component{
 
     showPost() {
 
-
         let posts = this.props.posts;
 
         let strSearch = this.props.dataSearch;
@@ -87,9 +86,9 @@ class PostItemContainer extends React.Component{
 
     render () {
 
-        this.fetchPostApi();
-
-        console.log(this.props);
+        if(this.props.resultCreatePost.message || this.props.dataDelete.message) {
+            this.componentWillMount();
+        }
 
         return (
             <div className="panel panel-success">
@@ -120,7 +119,8 @@ const mapStateToProps = state => {
         posts: state.posts,
         login: state.dataLogin,
         dataSearch: state.dataSearch,
-        dadaDelete: state.dadaDelete
+        dataDelete: state.dataDelete,
+        resultCreatePost: state.resultCreatePost
     }
 };
 

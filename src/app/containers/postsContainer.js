@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from '../components/Title'
 import Control from '../components/Control'
-import Form from '../components/Form'
+import Form from '../containers/formContainer'
 import PostItem from '../containers/postItemContainer'
 
 
@@ -16,7 +16,19 @@ export default class PostsContainer extends React.Component {
         }
     }
 
+    showForm() {
+        this.setState({
+            isShowForm: !this.state.isShowForm
+        });
+    }
+
     render() {
+
+        let form = "";
+        if(this.state.isShowForm) {
+            form = <Form />;
+        }
+
         return (
             <div className="container">
 
@@ -25,11 +37,11 @@ export default class PostsContainer extends React.Component {
                 {/*ende  title*/}
 
                 {/*Control (search, sort add) start*/}
-                <Control/>
+                <Control toggleForm = {this.showForm.bind(this)} btnAdd = {this.state.isShowForm}/>
                 {/*End Controll*/}
 
                 {/*Form start*/}
-                <Form/>
+                {form}
                 {/*End form*/}
 
                 {/*List start*/}
